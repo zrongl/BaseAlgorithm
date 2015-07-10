@@ -1,6 +1,12 @@
-//一步一步学算法之循环和递归
+//
+//  iterate.c
+//  循环和递归
+//
+//  Created by ronglei on 14-6-23.
+//  Copyright (c) 2014年 ronglei. All rights reserved.
+//
 
-#include <stdio.h>
+#include "algorithm.h"
 
 //循环计算n的阶乘
 int iterate(int value)

@@ -8,26 +8,26 @@
 
 #include "data_structure.h"
 
-void bitree_init(BiTree *tree)
+void init_binary_tree(Binary_Tree_Node_Ptr *tree)
 {
     char ch;
     scanf("%c", &ch);
     if (ch == '#') {
         *tree = NULL;
     }else{
-        *tree = (BiTree)malloc(sizeof(BiTNode));
+        *tree = (Binary_Tree_Node_Ptr)malloc(sizeof(Binary_Tree_Node));
         if (*tree == NULL) {
             exit(-1);
         }
         
         (*tree)->data = ch;
         
-        bitree_init(&((*tree)->lchild));
-        bitree_init(&((*tree)->rchild));
+        init_binary_tree(&((*tree)->lchild));
+        init_binary_tree(&((*tree)->rchild));
     }
 }
 
-void pre_order_traverse(BiTree tree)
+void pre_order_traverse(Binary_Tree_Node_Ptr tree)
 {
     if (tree == NULL) {
         return;
@@ -39,7 +39,7 @@ void pre_order_traverse(BiTree tree)
     pre_order_traverse(tree->rchild);
 }
 
-void mid_order_traverse(BiTree tree)
+void mid_order_traverse(Binary_Tree_Node_Ptr tree)
 {
     if (tree == NULL) {
         return;
@@ -50,7 +50,7 @@ void mid_order_traverse(BiTree tree)
     mid_order_traverse(tree->rchild);
 }
 
-void last_order_traverse(BiTree tree)
+void last_order_traverse(Binary_Tree_Node_Ptr tree)
 {
     if (tree == NULL) {
         return;

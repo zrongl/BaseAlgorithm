@@ -1,18 +1,14 @@
 //
-//  log.h
+//  output.c
 //  Algorithm
 //
 //  Created by ronglei on 14-7-14.
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#ifndef Algorithm_log_h
-#define Algorithm_log_h
-#include <stdio.h>
+#include "advance.h"
 
-void print_2(float val2);
-
-void print_2(float val2)
+void print_binary_f(float val2)
 {
 	unsigned char *p = (unsigned char*)&val2 + 3; //从低位到高位,低端字节计算机
 	for(int k = 0; k <= 3; k++)
@@ -57,4 +53,3 @@ fprintf((stderr, "<%s : %d> %s\n",\
 fprintf(stderr, "-------\n");\
 } while (0);
 
-#endif

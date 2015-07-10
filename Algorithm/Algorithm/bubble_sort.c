@@ -1,9 +1,12 @@
-//一步一步学算法之排序
-//递归排序   快速排序、归并排序、堆排序
-//非递归排序  冒泡排序、插入排序、希尔排序
+//
+//  bubble_sort.c
+//  冒泡排序
+//
+//  Created by ronglei on 14-6-20.
+//  Copyright (c) 2014年 ronglei. All rights reserved.
+//
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "algorithm.h"
 
 // 冒泡排序
 // 每次遍历数组找到最大或最小的放到特定位置,然后一次类推知道最后一个数

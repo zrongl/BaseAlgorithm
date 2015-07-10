@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DB13DEC1B4BD17A00258E0A /* NXMapTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 5DB13DEA1B4BD17A00258E0A /* NXMapTable.c */; };
+		5DD1791A1B45790500CD3F0E /* specific.c in Sources */ = {isa = PBXBuildFile; fileRef = 5DD179191B45790500CD3F0E /* specific.c */; };
+		5DD179251B45891E00CD3F0E /* NXHashTable.c in Sources */ = {isa = PBXBuildFile; fileRef = 5DD179231B45891E00CD3F0E /* NXHashTable.c */; };
+		5DE295D01B437D7C00BDFD24 /* hash_table.c in Sources */ = {isa = PBXBuildFile; fileRef = 5DE295CF1B437D7C00BDFD24 /* hash_table.c */; };
+		5DE295D21B438EC400BDFD24 /* output.c in Sources */ = {isa = PBXBuildFile; fileRef = 5DE295D11B438D6000BDFD24 /* output.c */; };
 		6548366E1951820300522B1E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6548366D1951820300522B1E /* main.c */; };
 		654836701951820300522B1E /* Algorithm.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6548366F1951820300522B1E /* Algorithm.1 */; };
 		65D3FF3319587CAA009A9726 /* bubble_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = 65D3FF2A19587CAA009A9726 /* bubble_sort.c */; };
@@ -39,6 +44,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5DB13DE51B4BD17A00258E0A /* helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = helper.h; path = Algorithm/helper.h; sourceTree = "<group>"; };
+		5DB13DEA1B4BD17A00258E0A /* NXMapTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NXMapTable.c; sourceTree = "<group>"; };
+		5DB13DEB1B4BD17A00258E0A /* NXMapTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXMapTable.h; sourceTree = "<group>"; };
+		5DD179191B45790500CD3F0E /* specific.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = specific.c; sourceTree = "<group>"; };
+		5DD179231B45891E00CD3F0E /* NXHashTable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NXHashTable.c; sourceTree = "<group>"; };
+		5DD179241B45891E00CD3F0E /* NXHashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXHashTable.h; sourceTree = "<group>"; };
+		5DE295CF1B437D7C00BDFD24 /* hash_table.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hash_table.c; sourceTree = "<group>"; };
+		5DE295D11B438D6000BDFD24 /* output.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = output.c; sourceTree = "<group>"; };
 		6548366A1951820300522B1E /* Algorithm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Algorithm; sourceTree = BUILT_PRODUCTS_DIR; };
 		6548366D1951820300522B1E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = main.c; path = Algorithm/main.c; sourceTree = "<group>"; };
 		6548366F1951820300522B1E /* Algorithm.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; name = Algorithm.1; path = Algorithm/Algorithm.1; sourceTree = "<group>"; };
@@ -57,7 +70,6 @@
 		65E4A0571962594D00A7201A /* queue.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = queue.c; sourceTree = "<group>"; };
 		65E4A0B61962A00E00A7201A /* binary_tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = binary_tree.c; sourceTree = "<group>"; };
 		65E4A0B81963FFB500A7201A /* shuffle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shuffle.c; sourceTree = "<group>"; };
-		65E4E604197411A000DADA3D /* log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = log.h; path = Algorithm/log.h; sourceTree = "<group>"; };
 		65E7877C196F904100E16EE6 /* advance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = advance.h; sourceTree = "<group>"; };
 		65E7877D196F906E00E16EE6 /* overflow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = overflow.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +88,7 @@
 		654836611951820300522B1E = {
 			isa = PBXGroup;
 			children = (
-				65E4E604197411A000DADA3D /* log.h */,
+				5DB13DE51B4BD17A00258E0A /* helper.h */,
 				6548366D1951820300522B1E /* main.c */,
 				65E7877B196F902E00E16EE6 /* Advance */,
 				65D3FF2819587CAA009A9726 /* Algorithm */,
@@ -115,10 +127,15 @@
 			isa = PBXGroup;
 			children = (
 				65E4A05619615F8600A7201A /* data_structure.h */,
+				5DE295CF1B437D7C00BDFD24 /* hash_table.c */,
 				65D3FF3219587CAA009A9726 /* list.c */,
 				65E4A052196147E600A7201A /* stack.c */,
 				65E4A0571962594D00A7201A /* queue.c */,
 				65E4A0B61962A00E00A7201A /* binary_tree.c */,
+				5DD179241B45891E00CD3F0E /* NXHashTable.h */,
+				5DD179231B45891E00CD3F0E /* NXHashTable.c */,
+				5DB13DEB1B4BD17A00258E0A /* NXMapTable.h */,
+				5DB13DEA1B4BD17A00258E0A /* NXMapTable.c */,
 			);
 			name = DataStructure;
 			path = Algorithm/DataStructure;
@@ -128,8 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				65E7877C196F904100E16EE6 /* advance.h */,
+				5DE295D11B438D6000BDFD24 /* output.c */,
 				65E7877D196F906E00E16EE6 /* overflow.c */,
 				65E0041A1974EC3A0083852D /* memory.c */,
+				5DD179191B45790500CD3F0E /* specific.c */,
 			);
 			name = Advance;
 			path = Algorithm/Advance;
@@ -186,10 +205,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE295D21B438EC400BDFD24 /* output.c in Sources */,
 				65E4A053196147E600A7201A /* stack.c in Sources */,
 				65D3FF3419587CAA009A9726 /* common.c in Sources */,
 				65E4A0B71962A00E00A7201A /* binary_tree.c in Sources */,
 				6548366E1951820300522B1E /* main.c in Sources */,
+				5DB13DEC1B4BD17A00258E0A /* NXMapTable.c in Sources */,
+				5DD1791A1B45790500CD3F0E /* specific.c in Sources */,
 				65E4A0581962594D00A7201A /* queue.c in Sources */,
 				65D3FF3519587CAA009A9726 /* insert_sort.c in Sources */,
 				65D3FF3819587CAA009A9726 /* quick_sort.c in Sources */,
@@ -197,6 +219,8 @@
 				65D3FF3319587CAA009A9726 /* bubble_sort.c in Sources */,
 				65E4A0B91963FFB500A7201A /* shuffle.c in Sources */,
 				65D3FF3619587CAA009A9726 /* iterate.c in Sources */,
+				5DD179251B45891E00CD3F0E /* NXHashTable.c in Sources */,
+				5DE295D01B437D7C00BDFD24 /* hash_table.c in Sources */,
 				65D3FF3719587CAA009A9726 /* merger_sort.c in Sources */,
 				65D3FF3919587CAA009A9726 /* search.c in Sources */,
 				65D3FF3A19587CAA009A9726 /* list.c in Sources */,

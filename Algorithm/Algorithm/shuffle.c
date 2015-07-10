@@ -1,13 +1,11 @@
 //
 //  shuffle.c
-//  Algorithm
+//  洗牌算法
 //
 //  Created by ronglei on 14-7-2.
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "time.h"
 #include "algorithm.h"
 

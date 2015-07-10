@@ -6,8 +6,6 @@
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "algorithm.h"
 
 void print(int *array, int length)

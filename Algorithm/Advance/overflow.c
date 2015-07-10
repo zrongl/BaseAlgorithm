@@ -8,8 +8,7 @@
 //
 
 #include "advance.h"
-#include <stdio.h>
-#include "stdint.h"
+#include <stdint.h>
 
 /*
  bool   1byte

@@ -1,5 +1,11 @@
-//一步一步学算法之查找
-#include "stdio.h"
+//
+//  search.c
+//  查找算法
+//
+//  Created by ronglei on 14-6-23.
+//  Copyright (c) 2014年 ronglei. All rights reserved.
+//
+
 #include "algorithm.h"
 
 //对于无序排列的数据需要遍历整个数据进行查找

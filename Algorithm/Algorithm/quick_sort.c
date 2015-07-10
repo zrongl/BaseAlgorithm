@@ -1,16 +1,14 @@
 //
 //  quick_sort.c
-//  Algorithm
+//  快速排序
 //
 //  Created by ronglei on 14-6-23.
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include <stdio.h>
-#include "string.h"
 #include "algorithm.h"
 
-static int gQuickSort[];
+static int gQuickSort[] = {};
 
 int get_middle(int array[], int start, int end);
 

@@ -1,13 +1,11 @@
 //
 //  insert_sort.c
-//  Algorithm
+//  插入排序
 //
 //  Created by ronglei on 14-6-20.
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "algorithm.h"
 
 //插入排序

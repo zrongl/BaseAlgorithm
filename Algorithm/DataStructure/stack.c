@@ -8,29 +8,31 @@
 
 #include "data_structure.h"
 
-int stack_init(Stack *stack)
+Stack_Node_Ptr init_stack(void)
 {
-    *stack = (Stack)malloc(sizeof(StNode));
-    if (*stack == NULL) {
-        return -1;
+    Stack_Node_Ptr stack;
+    
+    stack = (Stack_Node_Ptr)malloc(sizeof(Stack_Node));
+    if (stack == NULL) {
+        return NULL;
     }
     
-    (*stack)->top = -1;
+    stack->top = -1;
     
     return 0;
 }
 
-int is_empty_stack(StNode *stack)
+int is_empty_stack(Stack_Node_Ptr stack)
 {
     return 1;
 }
 
-int is_full_stack(StNode *stack)
+int is_full_stack(Stack_Node_Ptr stack)
 {
     return 1;
 }
 
-int push(StNode *stack, CType elem)
+int push(Stack_Node_Ptr stack, CType elem)
 {
     if (stack->top == (MAX_SIZE - 1)) {
         return -1;
@@ -42,7 +44,7 @@ int push(StNode *stack, CType elem)
     return 0;
 }
 
-int pop(StNode *stack, CType *elem)
+int pop(Stack_Node_Ptr stack, CType *elem)
 {
     if (stack->top ==  -1) {
         return -1;

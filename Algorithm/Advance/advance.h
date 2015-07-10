@@ -10,6 +10,9 @@
 #ifndef Algorithm_advance_h
 #define Algorithm_advance_h
 
+#include <stdio.h>
+#include <stdlib.h>
+
 void overflow();
 
 #endif

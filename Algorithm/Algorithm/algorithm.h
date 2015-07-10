@@ -9,9 +9,18 @@
 #ifndef Algorithm_algorithm_h
 #define Algorithm_algorithm_h
 
+#include <stdio.h>
+#include <stdlib.h>
+
 //常用的方法
 void swap(int *x, int *y);
 void print(int *array, int length);
+
+/**
+ * 排序算法分为：
+ * 递归排序：快速排序、归并排序、堆排序
+ * 非递归排序：冒泡排序、插入排序、希尔排序
+ */
 
 //查找
 //对于无序排列的数据需要遍历整个数据进行查找
