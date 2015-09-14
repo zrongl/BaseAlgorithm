@@ -13,6 +13,10 @@
 #include <limits.h>
 #include <string.h>
 #include <pthread.h>
+#include <stddef.h>
+#include <unistd.h>
+
+#define NUM_THREADS 5
 
 static pthread_key_t key;
 static pthread_once_t init_done = PTHREAD_ONCE_INIT;
@@ -22,40 +26,64 @@ extern char **environ;
 void
 destroy(void *p)
 {
-    printf("begin destroy\n");
+    printf("%p thread destroy\n", pthread_self());
     free(p);
 }
 
 static void
-thread_init(void)
+specific_init(void)
 {
     pthread_key_create(&key, destroy);
 }
 
-char *
-getenv(const char *name)
+void *
+thread_fun()
 {
-    unsigned long i, len;
-    char *envbuf;
-    pthread_once(&init_done, thread_init);
-    pthread_mutex_lock(&env_mutex);
-    envbuf = (char *)pthread_getspecific(key);
-    if (envbuf == NULL) {
-        envbuf = malloc(ARG_MAX);
-        if (envbuf == NULL) {
-            pthread_mutex_unlock(&env_mutex);
-            return(NULL);
-        }
-        pthread_setspecific(key, envbuf);
+    char *buf;
+    printf("%lu specific key\n", key);
+    buf = pthread_getspecific(key);
+    
+    if (buf == NULL) {
+        buf = malloc(50 * sizeof(char));
+        sprintf(buf, "%p thread function", pthread_self());
+        pthread_setspecific(key, buf);
     }
-    len = strlen(name);
-    for (i = 0; environ[i] != NULL; i++) {
-        if ((strncmp(name, environ[i], len) == 0) &&(environ[i][len] == '=')) {
-            strcpy(envbuf, &environ[i][len+1]);
-            pthread_mutex_unlock(&env_mutex);
-            return(envbuf);
+    
+    printf("%s\n", pthread_getspecific(key));
+    
+    return NULL;
+}
+
+void
+thread_specific()
+{
+    pthread_once(&init_done, specific_init);
+    
+    specific_init();
+    
+    int rc,t;
+    pthread_t thread[NUM_THREADS];
+    
+    for( t = 0; t < NUM_THREADS; t++){
+        rc = pthread_create(&thread[t], NULL, thread_fun, &t);
+        if (rc){
+            printf("ERROR; return code is %d\n", rc);
+            break;
         }
     }
-    pthread_mutex_unlock(&env_mutex);
-    return(NULL);
+    
+//    pthread_key_delete(key);
+    sleep(5);
+    
+    specific_init();
+    
+    for( t = 0; t < NUM_THREADS; t++){
+        rc = pthread_create(&thread[t], NULL, thread_fun, &t);
+        if (rc){
+            printf("ERROR; return code is %d\n", rc);
+            break;
+        }
+    }
+    
+//    pthread_key_delete(key);
 }

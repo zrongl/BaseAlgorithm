@@ -1,21 +1,21 @@
 //
-//  binary_tree.c
+//  tree.c
 //  Algorithm
 //
 //  Created by ronglei on 14-7-1.
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include "data_structure.h"
+#include "structure.h"
 
-void init_binary_tree(Binary_Tree_Node_Ptr *tree)
+void init_binary_tree(Tree_Node_Ptr *tree)
 {
     char ch;
     scanf("%c", &ch);
     if (ch == '#') {
         *tree = NULL;
     }else{
-        *tree = (Binary_Tree_Node_Ptr)malloc(sizeof(Binary_Tree_Node));
+        *tree = (Tree_Node_Ptr)malloc(sizeof(Tree_Node));
         if (*tree == NULL) {
             exit(-1);
         }
@@ -27,7 +27,7 @@ void init_binary_tree(Binary_Tree_Node_Ptr *tree)
     }
 }
 
-void pre_order_traverse(Binary_Tree_Node_Ptr tree)
+void pre_order_traverse(Tree_Node_Ptr tree)
 {
     if (tree == NULL) {
         return;
@@ -39,7 +39,7 @@ void pre_order_traverse(Binary_Tree_Node_Ptr tree)
     pre_order_traverse(tree->rchild);
 }
 
-void mid_order_traverse(Binary_Tree_Node_Ptr tree)
+void mid_order_traverse(Tree_Node_Ptr tree)
 {
     if (tree == NULL) {
         return;
@@ -50,7 +50,7 @@ void mid_order_traverse(Binary_Tree_Node_Ptr tree)
     mid_order_traverse(tree->rchild);
 }
 
-void last_order_traverse(Binary_Tree_Node_Ptr tree)
+void last_order_traverse(Tree_Node_Ptr tree)
 {
     if (tree == NULL) {
         return;

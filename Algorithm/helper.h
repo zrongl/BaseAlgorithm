@@ -10,24 +10,12 @@
 #define Algorithm_helper_h
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-char *change(long val, int base, char *buf );
+char *change(long val, int base, char *retbuf );
 void print_binary_f(float val2);
-
-char *change(long val, int base, char *retbuf )
-{
-    static char *str = "0123456789ABCDEF";
-    char *p;
-    char buf[64];
-    
-    p = buf+63;
-    *p = 0;
-    
-    do { *--p = str[val % base]; } while( val /= base );
-    strcpy(retbuf,p);
-    
-    return retbuf;
-}
+void print_array(int *array);
+void swap(int *x, int *y);
 
 #endif

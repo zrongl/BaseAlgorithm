@@ -44,16 +44,28 @@ static unsigned exp2m1(unsigned x) { return (1 << x) - 1; };
 #define	ALLOCPAIRS(z,nb)    (1+(const void **) calloc(nb+1, sizeof (void *)))
 #define	FREEPAIRS(p)        (free((void*)(-1+p)))
 
-// BUCKETOF是一个宏，它返回指定data值经过hash后的数组地址
-/*
+
+/*  BUCKETOF是一个宏，它返回指定data值经过hash后的数组地址
  主要分三步:
  1.(*table->prototype->hash)(table->info,data)表示调用具体hash表的函数表的hash函数。对于ptr型的实际调用是NXPtrHash函数。
  2.((*table->prototype->hash)(table->info,data) % table->nbBuckets) 表示将得到的hash值进行求余，以对应于hash桶的索引。
  3.(((HashBucket*)table->buckets)+((*table->prototype->hash)(table->info, data) %table->nbBuckets))表示将索引加上基地址buckets，即时对应的data散列到的HashBucket数组中
  */
-/* iff necessary this modulo can be optimized since the nbBuckets is of the form 2**n-1 */
 #define	BUCKETOF(table, data)   (((HashBucket *)table->buckets) + ((*table->prototype->hash)(table->info, data) % table->nbBuckets))
+/* GOOD_CAPACITY返回恰当的buckets的容量大小，初始化函数NXCreateHashTableFromZone中会用到，比如：
+ * c值       返回值
+ * 0-1       1
+ * 2-3       3
+ * 4-7       7
+ * 8-15      15
+ * 16-31     31
+ * 32-63     63
+ * 64-127    127 ...
+**/
 #define GOOD_CAPACITY(c)        (exp2m1 (log2u (c)+1))
+/*
+ * MORE_CAPACITY根据当前容量返回扩容后的容量大小，在扩容函数_NXHashRehash中会用到
+ **/
 #define MORE_CAPACITY(b)        (b*2+1)
 
 #define ISEQUAL(table, data1, data2) ((data1 == data2) || (*table->prototype->isEqual)(table->info, data1, data2))

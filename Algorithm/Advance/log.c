@@ -1,5 +1,5 @@
 //
-//  output.c
+//  log.c
 //  Algorithm
 //
 //  Created by ronglei on 14-7-14.
@@ -7,29 +7,6 @@
 //
 
 #include "advance.h"
-
-void print_binary_f(float val2)
-{
-	unsigned char *p = (unsigned char*)&val2 + 3; //从低位到高位,低端字节计算机
-	for(int k = 0; k <= 3; k++)
-	{
-		int val2 = *(p-k);
-		for (int i = 7; i >= 0; i--)
-		{
-			if(val2 & (1 << i))
-				printf("1");
-			else
-				printf("0");
-		}
-		printf(" ");
-	}
-    printf("\n");
-}
-
-void print_mem(void *p, int size)
-{
-    
-}
 
 /*
  __DATE__               进行预处理的日期("mm dd yy"形式的字符串文字)

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include "data_structure.h"
+#include "structure.h"
 
 Queue_Node_Ptr init_queue(void)
 {

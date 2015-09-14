@@ -6,7 +6,8 @@
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include "algorithm.h"
+#include "search.h"
+#include "helper.h"
 
 //对于无序排列的数据需要遍历整个数据进行查找
 int findIndex(int array[], int length, int value)
@@ -38,7 +39,7 @@ int binary_search(int array[], int length, int value)
 		return -1;
 	}
 	
-    print(array, length);
+    print_array(array);
     
 	int *start = array;
 	int *end = array + (length - 1);

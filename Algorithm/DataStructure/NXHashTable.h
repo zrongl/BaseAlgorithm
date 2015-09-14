@@ -12,6 +12,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+/**
+ * hash     :决定了获取节点index的计算规则
+ * isEqual  :用于判断两个节点是否相同
+ * free     :用于释放节点
+ */
 typedef struct {
     uintptr_t	(*hash)(const void *info, const void *data);
     int         (*isEqual)(const void *info, const void *data1, const void *data2);

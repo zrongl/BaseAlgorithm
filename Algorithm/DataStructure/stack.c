@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include "data_structure.h"
+#include "structure.h"
 
 Stack_Node_Ptr init_stack(void)
 {

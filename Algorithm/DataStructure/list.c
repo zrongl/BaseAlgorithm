@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 ronglei. All rights reserved.
 //
 
-#include "data_structure.h"
+#include "structure.h"
 
 //创建一个只有头结点的链表
 List_Node_Ptr init_list(void)

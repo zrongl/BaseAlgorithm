@@ -79,15 +79,15 @@ int queue_out(Queue_Node_Ptr queue, CType *elem);
 typedef struct _Binary_Tree{
     char data;
     struct _Binary_Tree *lchild, *rchild;
-}Binary_Tree_Node, *Binary_Tree_Node_Ptr;
+}Tree_Node, *Tree_Node_Ptr;
 
-void binary_tree_init(Binary_Tree_Node_Ptr *tree);
+void binary_tree_init(Tree_Node_Ptr *tree);
 //前序遍历
-void pre_order_traverse(Binary_Tree_Node_Ptr tree);
+void pre_order_traverse(Tree_Node_Ptr tree);
 //中序遍历
-void mid_order_traverse(Binary_Tree_Node_Ptr tree);
+void mid_order_traverse(Tree_Node_Ptr tree);
 //后续遍历
-void last_order_traverse(Binary_Tree_Node_Ptr tree);
+void last_order_traverse(Tree_Node_Ptr tree);
 
 /*********************
  * 哈希表 hash

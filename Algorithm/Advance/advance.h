@@ -14,5 +14,6 @@
 #include <stdlib.h>
 
 void overflow();
+void thread_specific();
 
 #endif
